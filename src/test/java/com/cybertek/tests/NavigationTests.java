@@ -14,7 +14,7 @@ public class NavigationTests {
         firefox("firefox");
     }
     public static void chrome(String browser){
-
+//hello
         WebDriver driver= WebDriverFactory.getDriver(browser);
         driver.get("https://www.google.com");
         String gTitle=driver.getTitle();
