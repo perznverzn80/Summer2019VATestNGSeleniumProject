@@ -25,10 +25,11 @@ public class WebDriverFactory {
         } else if (browserType.toLowerCase().equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
-        } else if(browserType.toLowerCase().equalsIgnoreCase("safari")) {
-            driver = null;
-        }else if(browserType.toLowerCase().equalsIgnoreCase("edge")){
-               WebDriverManager.edgedriver().setup();
+        } else if(browserType.toLowerCase().equalsIgnoreCase("edge")) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+        }else if (browserType.toLowerCase().equalsIgnoreCase("safari")){
+               driver=null;
                 driver= new EdgeDriver();
             }
 

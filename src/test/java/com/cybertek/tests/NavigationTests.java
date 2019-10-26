@@ -12,6 +12,20 @@ public class NavigationTests {
     public static void main(String[] args) {
         chrome("chrome");
         firefox("firefox");
+        edge("edge");
+    }
+    public static void edge(String browser){
+        WebDriver driver=WebDriverFactory.getDriver(browser);
+        driver.get("https://www.google.com");
+        String gTitle=driver.getTitle();
+        driver.navigate().to("https://www.etsy.com");
+        String eTitle=driver.getTitle();
+        driver.navigate().back();
+        StringUtility.verifyEquals(gTitle,gTitle);
+        driver.navigate().forward();
+        String e2Title=driver.getTitle();
+        StringUtility.verifyEquals(eTitle,e2Title);
+        driver.quit();
     }
     public static void chrome(String browser){
 
@@ -29,26 +43,22 @@ public class NavigationTests {
 
         driver.quit();
        }
+
+
        public static void firefox(String browser){
         WebDriver driver=WebDriverFactory.getDriver(browser);
         driver.get("https://www.google.com");
-        String fTitle=driver.getTitle();
+        String gTitle=driver.getTitle();
         driver.navigate().to("https://etsy.com");
-        String feTitle=driver.getTitle();
+        String eTitle=driver.getTitle();
         driver.navigate().back();
-        StringUtility.verifyEquals(fTitle,fTitle);
+        StringUtility.verifyEquals(gTitle,gTitle);
         driver.navigate().forward();
-        String fe2Title=driver.getTitle();
-        StringUtility.verifyEquals(feTitle,fe2Title);
+        String e2Title=driver.getTitle();
+        StringUtility.verifyEquals(eTitle,e2Title);
         driver.quit();
 
        }
-       public static void edge(String browser){
-        WebDriver driver=WebDriverFactory.getDriver(browser);
 
-
-
-        driver.quit();
-       }
 
 }
