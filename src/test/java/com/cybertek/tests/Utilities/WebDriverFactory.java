@@ -1,12 +1,10 @@
 package com.cybertek.tests.Utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
 
 public class WebDriverFactory {
 
@@ -30,7 +28,7 @@ public class WebDriverFactory {
             driver = new EdgeDriver();
         }else if (browserType.toLowerCase().equalsIgnoreCase("safari")){
                driver=null;
-                driver= new EdgeDriver();
+
             }
 
         return driver;

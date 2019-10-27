@@ -10,7 +10,7 @@ public class StringUtility {
 //        }else{
 //            System.out.println("Failed");
 //        }
-        String result = expected.equals(actual) ?  "Pass" : "Failed";
+        String result = expected.equals(actual) ?  "PASS" : "FAILED";
         System.out.println(result);
 
 

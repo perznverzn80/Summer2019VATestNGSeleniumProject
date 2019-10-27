@@ -1,10 +1,8 @@
 package com.cybertek.tests.VytrekAutomation;
 
 import com.cybertek.tests.Utilities.WebDriverFactory;
-import org.jsoup.select.Evaluator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class VytrekAutomation {
 
@@ -16,24 +14,55 @@ public class VytrekAutomation {
     Click login button
     •Verify that the user login successfully
      */
-    public static void main(String[] args) {
-        WebDriver driver= WebDriverFactory.getDriver("chrome");
+    public static void main(String[] args) throws InterruptedException {
+
+
+
+
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.get("https://qa2.vytrack.com/user/login");
-        WebElement UserNameInput=driver.findElement(By.id("_Username"));
-        UserNameInput.sendKeys("User1");
-        WebElement RetrievePassword=driver.findElement(By.id("_Password"));
-        RetrievePassword.click();
-        String expected="https://qa2.vytrack.com/";
-        String actual=driver.getCurrentUrl();
-        if(expected.equals(actual)){
+        driver.findElement(By.id("prependedInput")).sendKeys("storemanager61");
+        driver.findElement(By.id("prependedInput2")).sendKeys("UserUser123");
+        driver.findElement(By.id("_submit")).click();
+        String expected = "https://qa2.vytrack.com/";
+        String actual = driver.getCurrentUrl();
+        Thread.sleep(5000);
+        if (expected.equals(actual)) {
             System.out.println("Passed");
-        }else{
+        } else {
             System.out.println("Failed");
         }
         driver.quit();
 
-
+//    // Open the website
+//    WebDriver driver = WebDriverFactory.getDriver("chrome");
+//        driver.get("https://qa2.vytrack.com/user/login");
+//    // Enter valid username
+//    WebElement UsernameInput = driver.findElement(By.id("prependedInput"));
+//    String expectedUsername = "User24";
+//        UsernameInput.sendKeys(expectedUsername);
+//        Thread.sleep(2000);
+//    // Enter valid password
+//    WebElement PasswordInput = driver.findElement(By.id("prependedInput2"));
+//    String expectedPassword = "UserUser123";
+//        PasswordInput.sendKeys(expectedPassword);
+//        Thread.sleep(2000);
+//    // Click submit
+//    WebElement retrieveLogin = driver.findElement(By.id("_submit"));
+//        retrieveLogin.click();  // asking element to click
+//        Thread.sleep(2000);
+//    String actualUrl = driver.getCurrentUrl();
+//    String expectedURl = "https://qa2.vytrack.com/";
+//    //Verify
+//    verifyEquals(actualUrl,expectedURl);
+//        Thread.sleep(2000);
+//        driver.close();
+//}
 
 
     }
-}
+
+
+
+        }
+
