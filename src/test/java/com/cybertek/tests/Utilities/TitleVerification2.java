@@ -23,27 +23,28 @@ public class TitleVerification2 {
 
         Title=Title.replace(" ","");
         String URL=driver.getCurrentUrl();
-        if(URL.contains(Title){
-            System.out.println("Passed");
-        }if else {
-            System.out.println("FAILED");
-        }
+       if(URL.contains(Title){
+          System.out.println("Passed");
+       }else if {
+          System.out.println("FAILED");
+      }
 
         driver.navigate().to("https://wayfair.com/");
-        String Title=driver.getTitle().toLowerCase();
-        Title=Title.replace(" ","");
-        URL.contains(Title);
+        String Title1=driver.getTitle().toLowerCase();
+        Title1=Title1.replace(" ","");
+        System.out.println(Title1);
+        URL.contains(Title1);
 
         driver.navigate().to("https://walmart.com");
-        String Title= driver.getTitle().toLowerCase();
-        Title=Title.replace(" ","");
-        URL.contains(Title);
+        String Title2= driver.getTitle().toLowerCase();
+        Title2=Title2.replace(" ","");
+        URL.contains(Title2);
 
         driver.navigate().to("https://westelm.com/");
-        String WesTitle=driver.getTitle();
-        WesTitle=WesTitle.replace(" ","");
-        URL.contains(WesTitle);
-        StringUtility.verifyEquals(WesTitle,URL);
+        String Title3=driver.getTitle();
+        Title3=Title3.replace(" ","");
+        URL.contains(Title3);
+        StringUtility.verifyEquals(Title3,URL);
         driver.quit();
 
 
