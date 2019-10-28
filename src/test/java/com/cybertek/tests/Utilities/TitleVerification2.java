@@ -19,32 +19,54 @@ public class TitleVerification2 {
         List<String> urls = Arrays.asList("https://lulugandgeorgia.com", "https://wayfair.com/", "https://walmart.com" , "https://westelm.com/");
         WebDriver driver=WebDriverFactory.getDriver("chrome");
         driver.get("https://lulugandgeorgia.com");
-        String Title= driver.getTitle().toLowerCase();
-
+        String Title= driver.getTitle().toLowerCase().replace(".com","");
+       // System.out.println(Title);
         Title=Title.replace(" ","");
+
         String URL=driver.getCurrentUrl();
-       if(URL.contains(Title){
+
+       if(URL.contains(Title)){
           System.out.println("Passed");
-       }else if {
+       }else {
           System.out.println("FAILED");
       }
 
         driver.navigate().to("https://wayfair.com/");
-        String Title1=driver.getTitle().toLowerCase();
+        String Title1=driver.getTitle().toLowerCase().replace(".com","");
+       // System.out.println(Title1);
         Title1=Title1.replace(" ","");
-        System.out.println(Title1);
-        URL.contains(Title1);
+       // Title1=Title1.replace(".com","");
+        //System.out.println(Title1);
+        if(URL.contains(Title1)){
+            System.out.println("Passed");
+        }else {
+            System.out.println("FAILED");
+        }
 
         driver.navigate().to("https://walmart.com");
-        String Title2= driver.getTitle().toLowerCase();
+        String Title2= driver.getTitle().toLowerCase().replace(".com","");
+        //System.out.println(Title2);
         Title2=Title2.replace(" ","");
+      //  Title2=Title2.replace(".com","");
         URL.contains(Title2);
+        if(URL.contains(Title2)){
+            System.out.println("Passed");
+        }else {
+            System.out.println("FAILED");
+        }
 
         driver.navigate().to("https://westelm.com/");
-        String Title3=driver.getTitle();
+        String Title3=driver.getTitle().toLowerCase().replace(".com","");
+       // System.out.println(Title3);
         Title3=Title3.replace(" ","");
+       // Title3=Title3.replace(".com","");
         URL.contains(Title3);
-        StringUtility.verifyEquals(Title3,URL);
+        if(URL.contains(Title3)){
+            System.out.println("Passed");
+        }else {
+            System.out.println("FAILED");
+        }
+
         driver.quit();
 
 
