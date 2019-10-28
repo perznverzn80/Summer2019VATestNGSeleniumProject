@@ -13,6 +13,7 @@ public class IdLocatorTest {
         driver.manage().window().maximize();
         WebElement element=driver.findElement(By.id("disappearing_button"));
         String txt=element.getText();
+        System.out.println("Text:"+txt);
         element.click();
 
 
