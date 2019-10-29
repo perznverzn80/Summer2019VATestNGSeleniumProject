@@ -14,68 +14,28 @@ public class TitleVerification2 {
       For example,title of in the first website title is Lulu and Giorgia and the
     URLis https://lulugandgeorgia.com. So,this test case must pass.5.Close the browser at the end of the test.
      */
+
     public static void main(String[] args) {
-
-        List<String> urls = Arrays.asList("https://lulugandgeorgia.com", "https://wayfair.com/", "https://walmart.com" , "https://westelm.com/");
-        WebDriver driver=WebDriverFactory.getDriver("chrome");
-        driver.get("https://lulugandgeorgia.com");
-        String Title= driver.getTitle().toLowerCase().replace("  ","");
-       // System.out.println(Title);
-       // Title=Title.replace(" ","");
-String website1 = "https://lulugandgeorgia.com";
-        String URL=website1.substring(8,website1.lastIndexOf(".com"));
-
-       if(Title.contains(URL)){
-          System.out.println("Passed");
-       }else {
-          System.out.println("FAILED");
-      }
-
-        driver.navigate().to("https://wayfair.com/");
-        String website2 = driver.getCurrentUrl();
-        String Title2=driver.getTitle().toLowerCase().replace(" ","");
-       // System.out.println(Title1);
-       // Title1=Title1.replace(" ","");
-       // Title1=Title1.replace(".com","");
-        //System.out.println(Title1);
-        String URL2=website2.substring(8,website2.lastIndexOf(".com"));
-        if(Title2.contains(URL)){
-            System.out.println("Passed");
-        }else {
-            System.out.println("FAILED");
+        List<String> urls = Arrays.asList("https://lulugandgeorgia.com",
+                "https://wayfair.com/",
+                "https://walmart.com ",
+                "https://westelm.com/");
+        WebDriver driver =WebDriverFactory.getDriver("chrome");
+        for (int i=0; i<urls.size();i++){
+            driver.get(urls.get(i));
+            String domain = urls.get(i).substring(8,urls.get(i).lastIndexOf('.'));
+            if (driver.getTitle().toLowerCase().replaceAll(" ","").contains(domain)){
+                System.out.println("PASS for website " + urls.get(i) +" title is " + driver.getTitle());
+            }else{
+                System.out.println("FAIL for website " + urls.get(i) + " title is " + driver.getTitle());
+            }
         }
-//
-//        driver.navigate().to("https://walmart.com");
-//        String Title2= driver.getTitle().toLowerCase().replace(" ","");
-//        //System.out.println(Title2);
-//        //Title2=Title2.replace(" ","");
-//      //  Title2=Title2.replace(".com","");
-//        Title2.contains(URL);
-//        if(Title2.contains(URL)){
-//            System.out.println("Passed");
-//        }else {
-//            System.out.println("FAILED");
-//        }
-//
-//        driver.navigate().to("https://westelm.com/");
-//        String Title3=driver.getTitle().toLowerCase().replace(".com","");
-//       // System.out.println(Title3);
-//        Title3=Title3.replace(" ","");
-//       // Title3=Title3.replace(".com","");
-//       Title3.contains(URL);
-//        if(Title3.contains(URL)){
-//            System.out.println("Passed");
-//        }else {
-//            System.out.println("FAILED");
-//        }
-
         driver.quit();
-
-
+    }
 
 
 
 
 
     }
-}
+
