@@ -3,6 +3,7 @@ package com.cybertek.tests.VytrekAutomation;
 import com.cybertek.tests.Utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class VytrekAutomation {
 
@@ -21,19 +22,21 @@ public class VytrekAutomation {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.get("https://qa2.vytrack.com/user/login");
-        driver.findElement(By.id("prependedInput")).sendKeys("storemanager61");
-        driver.findElement(By.id("prependedInput2")).sendKeys("UserUser123");
+        WebElement username= driver.findElement(By.id("prependedInput"));
+        username.sendKeys("storemanager61");
+        WebElement password=driver.findElement(By.id("prependedInput2"));
+        password.sendKeys("UserUser123");
         driver.findElement(By.id("_submit")).click();
         String expected = "https://qa2.vytrack.com/";
         String actual = driver.getCurrentUrl();
         Thread.sleep(5000);
         if (expected.equals(actual)) {
             System.out.println("Passed");
-        } else {
+        }  else{
             System.out.println("Failed");
         }
         driver.quit();
-
+//xpath
 //    // Open the website
 //    WebDriver driver = WebDriverFactory.getDriver("chrome");
 //        driver.get("https://qa2.vytrack.com/user/login");

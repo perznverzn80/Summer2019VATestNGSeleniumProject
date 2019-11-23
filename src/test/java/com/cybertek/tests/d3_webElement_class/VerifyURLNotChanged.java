@@ -1,11 +1,9 @@
 package com.cybertek.tests.d3_webElement_class;
 
 import com.cybertek.tests.Utilities.WebDriverFactory;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
     public class VerifyURLNotChanged {
 
@@ -35,7 +33,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
                    }else{
                   System.out.println("Failed");
               }
-
 
 
 

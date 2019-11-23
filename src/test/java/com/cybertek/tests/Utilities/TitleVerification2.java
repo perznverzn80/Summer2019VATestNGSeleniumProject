@@ -22,7 +22,7 @@ public class TitleVerification2 {
                 "https://westelm.com/");
         WebDriver driver =WebDriverFactory.getDriver("chrome");
         for (int i=0; i<urls.size();i++){
-            driver.get(urls.get(i));
+            driver.navigate().to(urls.get(i));
             String domain = urls.get(i).substring(8,urls.get(i).lastIndexOf('.'));
             if (driver.getTitle().toLowerCase().replaceAll(" ","").contains(domain)){
                 System.out.println("PASS for website " + urls.get(i) +" title is " + driver.getTitle());
