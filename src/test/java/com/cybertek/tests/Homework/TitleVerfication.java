@@ -1,5 +1,7 @@
-package com.cybertek.tests.Utilities;
+package com.cybertek.tests.Homework;
 
+import com.cybertek.tests.Utilities.StringUtility;
+import com.cybertek.tests.Utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Arrays;
@@ -18,7 +20,7 @@ Arrays.asList("http://practice.cybertekschool.com/", "http://practice.cyberteksc
         String str="http://practice.cybertekschool.com/";
 
         List<String> urls = Arrays.asList("http://practice.cybertekschool.com/", "http://practice.cybertekschool.com/dropdown", "http://practice.cybertekschool.com/login");
-        WebDriver driver=WebDriverFactory.getDriver("chrome");
+        WebDriver driver= WebDriverFactory.getDriver("chrome");
         driver.get("http://practice.cybertekschool.com/");
 
 

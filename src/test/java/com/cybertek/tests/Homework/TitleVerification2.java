@@ -1,5 +1,6 @@
-package com.cybertek.tests.Utilities;
+package com.cybertek.tests.Homework;
 
+import com.cybertek.tests.Utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Arrays;
@@ -20,7 +21,7 @@ public class TitleVerification2 {
                 "https://wayfair.com/",
                 "https://walmart.com ",
                 "https://westelm.com/");
-        WebDriver driver =WebDriverFactory.getDriver("chrome");
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
         for (int i=0; i<urls.size();i++){
             driver.navigate().to(urls.get(i));
             String domain = urls.get(i).substring(8,urls.get(i).lastIndexOf('.'));
