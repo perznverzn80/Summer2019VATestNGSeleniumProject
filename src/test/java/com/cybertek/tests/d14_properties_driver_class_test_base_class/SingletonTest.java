@@ -1,24 +1,24 @@
-package com.cybertek.tests.da14_Framework;
+package com.cybertek.tests.d14_properties_driver_class_test_base_class;
 
 import com.cybertek.tests.Utilities.Driver;
-import com.cybertek.utilities.ConfigurationReader;
+import com.cybertek.tests.Utilities.ConfigurationReader;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 public class SingletonTest {
-    @Test
-    public void test1() {
-        // if you umcomment next line it will show compilation error
-        // because we cannot create object of that class
-//        Singleton s = new Singleton();
-
-        String s1 = Singleton.getInstance();
-
-        String s2 = Singleton.getInstance();
-
-        System.out.println("s1 = " + s1);
-        System.out.println("s2 = " + s2);
-    }
+//    @Test
+//    public void test1() {
+//        // if you umcomment next line it will show compilation error
+//        // because we cannot create object of that class
+////        Singleton s = new Singleton();
+//
+//        String s1 = Singleton.getInstance();
+//
+//        String s2 = Singleton.getInstance();
+//
+//        System.out.println("s1 = " + s1);
+//        System.out.println("s2 = " + s2);
+//    }
 
 
     @Test

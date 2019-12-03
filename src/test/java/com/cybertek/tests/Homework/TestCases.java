@@ -23,7 +23,7 @@ public class TestCases {
 
     @AfterMethod
     public void quit() {
-        // driver.quit();
+        //driver.quit();
     }
 
     @Test
@@ -154,12 +154,83 @@ public class TestCases {
     public void TestCase7() {
         driver.get("https://practice-cybertekschool.herokuapp.com/");
 
-        WebElement fileUpload = driver.findElement(By.xpath("//a[@href='/upload']"));
+        WebElement fileUpload = driver.findElement(By.xpath("//a[ contains(text(),'File Upload')]"));
         fileUpload.click();
-        driver.findElement(By.id("file-upload")).sendKeys("C:\\Users\\Parsa\\Downloads\\SmartSelect_20191123-211428_Chrome.gif");
-//        WebElement upload = driver.findElement(By.xpath("//input[@value='Upload']"));
-//        upload.sendKeys("C:\\Users\\Parsa\\Downloads\\SmartSelect_20191123-211428_Chrome.gif");
-
-driver.navigate().forward();
+        WebElement chooseFile=driver.findElement(By.xpath("//input[@id='file-upload']"));
+        chooseFile.sendKeys(" C:\\Users\\Parsa\\OneDrive\\Desktop\\parsatextfile.txt");
+        WebElement upload=driver.findElement(By.xpath("//input[@id='file-submit']"));
+        upload.click();
+        String fileuploadverify=driver.findElement(By.xpath("//*[.='File Uploaded!']")).getText();
+        Assert.assertEquals(fileuploadverify,"File Uploaded!");
+        System.out.println(fileuploadverify);
     }
+
+    @Test
+    public void TestCase8(){
+      driver.get("https://practice-cybertekschool.herokuapp.com");
+      WebElement autocomplete=driver.findElement(By.linkText("Autocomplete"));
+      autocomplete.click();
+      WebElement textfield=driver.findElement(By.xpath("//input[@id='myCountry']"));
+      textfield.sendKeys("United States of America");
+      WebElement submit=driver.findElement(By.xpath("//input[@value='Submit']"));
+      submit.click();
+      String youselected=driver.findElement(By.xpath("//p[@id='result']")).getText();
+        System.out.println(youselected);
+        Assert.assertEquals(youselected,"You selected: United States of America");
+
+    }
+//        @Test
+//        public void TestCase9() throws InterruptedException {
+//        driver.get("https://practice-cybertekschool.herokuapp.com");
+//        WebElement statuscode=driver.findElement(By.linkText("Status Codes"));
+//        statuscode.click();
+//        Thread.sleep(2000);
+//        WebElement num200=driver.findElement(By.xpath("//a[@href='status_codes/200']"));
+//        num200.click();
+//        Thread.sleep(2000);
+//        String returned200=driver.findElement(By.xpath("//*[@id=\"content\"]/div/p/text()[1]")).getText();
+//        System.out.println(returned200);
+//        Thread.sleep(1500);
+//        Assert.assertEquals(returned200,"    This page returned a 200 status code.");
+//
+//    }
+//        @Test
+//        public void TestCase10(){
+//        driver.get("https://practice-cybertekschool.herokuapp.com/");
+//        WebElement statuscodes=driver.findElement(By.linkText("Status Codes"));
+//        statuscodes.click();
+//        WebElement num301=driver.findElement(By.xpath("//a[@href='status_codes/301']"));
+//        num301.click();
+//        WebElement returned301=driver.findElement(By.xpath("//*[@id='content']/div/p/text()[1]"));
+//        System.out.println(returned301.getText());
+//        Assert.assertEquals(returned301.getText(),"This page returned a 301 status code.");
+//
+//        }
+//        @Test
+//        public void TestCase11() {
+//            driver.get("https://practice-cybertekschool.herokuapp.com/");
+//            WebElement statuscodes = driver.findElement(By.linkText("Status Codes"));
+//            statuscodes.click();
+//            WebElement num404=driver.findElement(By.xpath("//a[@href='status_codes/404']"));
+//            num404.click();
+//            String msg404=driver.findElement(By.xpath("//p[contains(text(),'     This page returned a 404 status code.')]")).getText();
+//            System.out.println(msg404);
+//            Assert.assertEquals(msg404,"     This page returned a 404 status code.");
+//        }
+//        @Test
+//        public void TestCase12(){
+//            driver.get("https://practice-cybertekschool.herokuapp.com/");
+//            WebElement statuscodes = driver.findElement(By.linkText("Status Codes"));
+//            statuscodes.click();
+//            WebElement num500=driver.findElement(By.xpath("//a[@href='status_codes/500']"));
+//            num500.click();
+//            String msg500=driver.findElement(By.xpath("//p[contains(text(),'     This page returned a 500 status code.')]")).getText();
+//            Assert.assertEquals(msg500,"    This page returned a 500 status code.");
+//
+//
+//
+//        }
 }
+
+
+
