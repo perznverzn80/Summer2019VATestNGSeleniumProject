@@ -1,4 +1,4 @@
-package com.cybertek.Pages;
+package com.cybertek.pages;
 
-public class DashboardPage {
+public class DashboardPage extends com.cybertek.pages.BasePage {
 }
