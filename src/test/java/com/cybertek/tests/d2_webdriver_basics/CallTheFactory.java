@@ -1,6 +1,6 @@
 package com.cybertek.tests.d2_webdriver_basics;
 
-import com.cybertek.tests.Utilities.WebDriverFactory;
+import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 
 public class CallTheFactory {

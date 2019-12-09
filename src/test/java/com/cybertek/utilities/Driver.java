@@ -1,4 +1,5 @@
-package com.cybertek.tests.Utilities;
+package com.cybertek.utilities;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -12,8 +13,12 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
-    private Driver() {}
+    private Driver() {
+
+    }
+
     private static WebDriver driver;
+
     public static WebDriver get() {
         if (driver == null) {
             String browser = ConfigurationReader.get("browser");
@@ -40,12 +45,14 @@ public class Driver {
                     WebDriverManager.iedriver().setup();
                     driver = new InternetExplorerDriver();
                     break;
+
                 case "edge":
                     if (!System.getProperty("os.name").toLowerCase().contains("windows"))
                         throw new WebDriverException("Your OS doesn't support Edge");
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     break;
+
                 case "safari":
                     if (!System.getProperty("os.name").toLowerCase().contains("mac"))
                         throw new WebDriverException("Your OS doesn't support Safari");
@@ -53,9 +60,14 @@ public class Driver {
                     driver = new SafariDriver();
                     break;
             }
+
+
+
         }
+
         return driver;
     }
+
     public static void closeDriver() {
         if (driver != null) {
             driver.quit();

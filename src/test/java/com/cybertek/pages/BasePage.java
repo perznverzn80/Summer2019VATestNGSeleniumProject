@@ -1,7 +1,7 @@
 package com.cybertek.pages;
 
-import com.cybertek.tests.Utilities.Driver;
 import com.cybertek.utilities.BrowserUtils;
+import com.cybertek.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -23,7 +23,6 @@ public abstract class BasePage {
     @FindBy(css = "#user-menu > a")
     protected WebElement userName;
 
-
     @FindBy(linkText = "Logout")
     public WebElement logOutLink;
 
@@ -41,7 +40,7 @@ public abstract class BasePage {
     public String getPageSubTitle() {
         //ant time we are verifying page name, or page subtitle, loader mask appears
         waitUntilLoaderScreenDisappear();
-        BrowserUtils.waitForStaleElement(pageSubTitle);
+//        BrowserUtils.waitForStaleElement(pageSubTitle);
         return pageSubTitle.getText();
     }
 

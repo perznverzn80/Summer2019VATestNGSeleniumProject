@@ -1,6 +1,6 @@
 package com.cybertek.tests.d11_upload_actions_class;
 
-import com.cybertek.tests.Utilities.WebDriverFactory;
+import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

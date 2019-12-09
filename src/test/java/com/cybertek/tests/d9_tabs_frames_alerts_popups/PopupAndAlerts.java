@@ -1,6 +1,6 @@
 package com.cybertek.tests.d9_tabs_frames_alerts_popups;
 
-import com.cybertek.tests.Utilities.WebDriverFactory;
+import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

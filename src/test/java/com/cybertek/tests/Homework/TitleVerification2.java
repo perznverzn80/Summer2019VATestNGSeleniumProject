@@ -1,6 +1,6 @@
 package com.cybertek.tests.Homework;
 
-import com.cybertek.tests.Utilities.WebDriverFactory;
+import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Arrays;

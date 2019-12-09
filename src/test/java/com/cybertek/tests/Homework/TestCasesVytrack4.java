@@ -1,12 +1,15 @@
 package com.cybertek.tests.Homework;
 
-import com.cybertek.tests.Utilities.WebDriverFactory;
+import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class TestCasesVytrack4 {
     WebDriver driver;
@@ -39,16 +42,17 @@ public class TestCasesVytrack4 {
         WebElement TesterMeeting = driver.findElement(By.xpath("//td[contains(text(),'Testers Meeting')]"));
         Actions action = new Actions(driver);
         action.moveToElement(driver.findElement(By.xpath("//tbody/tr[14]/td[9]/div/div/a"))).build().perform();
-        WebElement dots = driver.findElement(By.xpath("//tbody/tr[14]/td[9]/div/div/a")).;
+        WebElement dots = driver.findElement(By.xpath("//tbody/tr[14]/td[9]/div/div/a"));
         //dots.click();
         Thread.sleep(3000);
-//        String delete=(driver.findElement(By.xpath("//i[@class='fa-trash-o hide-text']"))).getAttribute("title");
-//        String edit=driver.findElement(By.xpath("//i[@class='fa-pencil-square-o hide-text']")).getAttribute("title");
-//        String view=driver.findElement(By.xpath("//div[@class='loader-mask']")).getAttribute("title");
-//        Assert.assertEquals(delete,"Delete");
-//        Thread.sleep(2000);
-//        Assert.assertEquals(delete,"Edit");
-//        Thread.sleep(2000);
-//        Assert.assertEquals(delete,"View");
+        List<WebElement> EditDeleteView=driver.findElements(By.xpath("//tbody/tr[14]/td[9]//ul//a"));
+        for (WebElement each : EditDeleteView) {
+            System.out.println(each.getAttribute("title"));
+            Assert.assertTrue(each.isDisplayed());
+
+        }
+
+
+         }
     }
-}
+

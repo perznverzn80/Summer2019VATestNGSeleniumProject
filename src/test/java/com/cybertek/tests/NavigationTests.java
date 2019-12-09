@@ -1,7 +1,7 @@
 package com.cybertek.tests;
 
-import com.cybertek.tests.Utilities.StringUtility;
-import com.cybertek.tests.Utilities.WebDriverFactory;
+import com.cybertek.utilities.StringUtility;
+import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 
 public class NavigationTests {

@@ -1,7 +1,7 @@
 package com.cybertek.tests.d14_properties_driver_class_test_base_class;
 
-import com.cybertek.tests.Utilities.Driver;
-import com.cybertek.tests.Utilities.ConfigurationReader;
+import com.cybertek.utilities.Driver;
+import com.cybertek.utilities.ConfigurationReader;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 

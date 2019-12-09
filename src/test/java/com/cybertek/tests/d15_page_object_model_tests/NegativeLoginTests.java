@@ -1,7 +1,7 @@
 package com.cybertek.tests.d15_page_object_model_tests;
 
-import com.cybertek.Pages.LoginPage;
-import com.cybertek.tests.d14_properties_driver_class_test_base_class.TestBase;
+import com.cybertek.pages.LoginPage;
+import com.cybertek.tests.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

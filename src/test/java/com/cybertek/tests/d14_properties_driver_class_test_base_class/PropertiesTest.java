@@ -1,6 +1,6 @@
 package com.cybertek.tests.d14_properties_driver_class_test_base_class;
 
-import com.cybertek.tests.Utilities.ConfigurationReader;
+import com.cybertek.utilities.ConfigurationReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
