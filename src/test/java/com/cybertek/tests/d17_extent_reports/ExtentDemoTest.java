@@ -22,7 +22,7 @@ public class ExtentDemoTest {
         report = new ExtentReports();
 
         // create report path
-        // System.getProperty("user.dir")  --> returns the location/path of my project
+        //System.getProperty("user.dir"); // --> returns the location/path of my project
         // "/test-output/report.html" --> report will be in test output folder, name --> report.html
         String path = System.getProperty("user.dir") + "/test-output/report.html";
 
